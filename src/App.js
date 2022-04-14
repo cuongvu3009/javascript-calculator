@@ -107,7 +107,7 @@ function App() {
   return (
     <div className='App'>
       <div className='container'>
-        <div className='output'>
+        <div id='display'>
           <div className='previous-operand'>
             {previousOperand} {operation}
           </div>
@@ -117,32 +117,34 @@ function App() {
           <button
             operation='AC'
             className='span-two-col'
+            id='clear'
             onClick={() => dispatch({ type: actions.DELETE_DIGIT })}
           >
             AC
           </button>
-          <OperationButton operation='/' dispatch={dispatch} />
-          <OperationButton operation='*' dispatch={dispatch} />
-          <DigitButton digit='7' dispatch={dispatch} />
-          <DigitButton digit='8' dispatch={dispatch} />
-          <DigitButton digit='9' dispatch={dispatch} />
-          <OperationButton operation='-' dispatch={dispatch} />
-          <DigitButton digit='4' dispatch={dispatch} />
-          <DigitButton digit='5' dispatch={dispatch} />
-          <DigitButton digit='6' dispatch={dispatch} />
-          <OperationButton operation='+' dispatch={dispatch} />
-          <DigitButton digit='1' dispatch={dispatch} />
-          <DigitButton digit='2' dispatch={dispatch} />
-          <DigitButton digit='3' dispatch={dispatch} />
+          <OperationButton operation='/' dispatch={dispatch} id='divide' />
+          <OperationButton operation='*' dispatch={dispatch} id='multiply' />
+          <DigitButton digit='7' dispatch={dispatch} id='seven' />
+          <DigitButton digit='8' dispatch={dispatch} id='eight' />
+          <DigitButton digit='9' dispatch={dispatch} id='nine' />
+          <OperationButton operation='-' dispatch={dispatch} id='subtract' />
+          <DigitButton digit='4' dispatch={dispatch} id='four' />
+          <DigitButton digit='5' dispatch={dispatch} id='five' />
+          <DigitButton digit='6' dispatch={dispatch} id='six' />
+          <OperationButton operation='+' dispatch={dispatch} id='add' />
+          <DigitButton digit='1' dispatch={dispatch} id='three' />
+          <DigitButton digit='2' dispatch={dispatch} id='two' />
+          <DigitButton digit='3' dispatch={dispatch} id='one' />
           <button
             operation='='
+            id='equals'
             className='span-two-row'
             onClick={() => dispatch({ type: actions.EVALUATE })}
           >
             =
           </button>
-          <DigitButton digit='0' dispatch={dispatch} />
-          <DigitButton digit='.' dispatch={dispatch} />
+          <DigitButton digit='0' dispatch={dispatch} id='zero' />
+          <DigitButton digit='.' dispatch={dispatch} id='decimal' />
           <a
             href='https://github.com/cuongvu3009/javascript-calculator'
             className='intro'

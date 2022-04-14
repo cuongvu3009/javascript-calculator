@@ -20,7 +20,7 @@ body {
 	padding: 8px
 }
 
-.output {
+#display {
 	height: 100px;
 	margin: 10px;
 	color: white;
